@@ -41,7 +41,7 @@ export default {
   background-size: 100% 400px;
   color: rgb(64, 64, 64);
   text-align: center;
-  padding-bottom: 12em;
+  padding-bottom: 10em;
   background-repeat: no-repeat;
   background-attachment: fixed;
   
