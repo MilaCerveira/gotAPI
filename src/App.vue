@@ -1,7 +1,33 @@
 <template lang="html">
-<div>
-
-
-
+<div>  
   
-</div>
+  
+  
+   </div>
+</template>
+
+
+<script>
+export default {
+  data(){
+    return{
+
+    }
+  },
+  components: {
+
+  },
+  methods: {
+
+  },
+  mounted(){
+
+  }
+
+}
+
+</script>
+
+<style scoped>
+
+</style>
