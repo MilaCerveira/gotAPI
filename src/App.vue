@@ -11,8 +11,11 @@
        {{quote.quote}}
        {{quote.character}}
 
-       <!-- it's another component so use <characterList> -->
-       <CharacterList></CharacterList>
+       <!-- it's another component so use <characterList> step3 -->
+         <div class="character-container">
+          <CharacterList :handleCharacterSelection="handleCharacterSelection"></CharacterList>
+          <CharacterDetails :selectedCharacter="selectedCharacter">  </CharacterDetails>
+        </div>
    </div>
 </template>
 
@@ -25,16 +28,19 @@ export default {
   data(){
     return{
       quote: '',
-
+      selectedCharacter: null
     }
   },
   components: {
     // 2. tell vue we are going to use CharacterList component
-    CharacterList: CharacterList
+    CharacterList: CharacterList,
+    CharacterDetails: CharacterDetails
 
   },
   methods: {
-
+    handleCharacterSelection(character) {
+      this.selectedCharacter = character;
+    }
   },
   mounted(){
   fetch('https://got-quotes.herokuapp.com/quotes')
@@ -101,4 +107,9 @@ h1 span::before {
 header {
   padding: 1em 0;
 }
+.character-container {
+  display:flex;
+  margin: 3%;
+}
+
 </style>
