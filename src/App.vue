@@ -10,12 +10,17 @@
        </div>
        {{quote.quote}}
        {{quote.character}}
+
+       <!-- it's another component so use <characterList> -->
+       <CharacterList></CharacterList>
    </div>
 </template>
 
 
 <script>
+//1. import
 import CharacterList from './components/CharacterList.vue'
+import CharacterDetails from './components/CharacterDetails.vue'
 export default {
   data(){
     return{
@@ -24,6 +29,8 @@ export default {
     }
   },
   components: {
+    // 2. tell vue we are going to use CharacterList component
+    CharacterList: CharacterList
 
   },
   methods: {
