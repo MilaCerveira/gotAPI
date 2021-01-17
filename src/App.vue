@@ -8,14 +8,18 @@
             <h1> <span> “A man with no motive is a man     </span> <span> no one suspects.  </span> Always keep your foes <span>confused.” </span></h1>
         </section>
        </div>
+       {{quote.quote}}
+       {{quote.character}}
    </div>
 </template>
 
 
 <script>
+import CharacterList from './components/CharacterList.vue'
 export default {
   data(){
     return{
+      quote: '',
 
     }
   },
@@ -26,7 +30,9 @@ export default {
 
   },
   mounted(){
-
+  fetch('https://got-quotes.herokuapp.com/quotes')
+  .then(res => res.json())
+  .then(quote => this.quote = quote)
   }
 
 }
@@ -41,7 +47,7 @@ export default {
   background-size: 100% 400px;
   color: rgb(64, 64, 64);
   text-align: center;
-  padding-bottom: 10em;
+  padding-bottom: 7em;
   background-repeat: no-repeat;
   background-attachment: fixed;
   
