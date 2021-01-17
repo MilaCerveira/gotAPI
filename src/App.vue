@@ -8,14 +8,16 @@
             <h1> <span> “A man with no motive is a man     </span> <span> no one suspects.  </span> Always keep your foes <span>confused.” </span></h1>
         </section>
        </div>
-       {{quote.quote}}
-       {{quote.character}}
-
+       <div class='quote-container'>
+       <h3>{{quote.quote}}</h3>
+       <h4>{{quote.character}}</h4>
+      </div>
        <!-- it's another component so use <characterList> step3 -->
          <div class="character-container">
           <CharacterList :handleCharacterSelection="handleCharacterSelection"></CharacterList>
           <CharacterDetails :selectedCharacter="selectedCharacter">  </CharacterDetails>
         </div>
+         
    </div>
 </template>
 
@@ -111,5 +113,7 @@ header {
   display:flex;
   margin: 3%;
 }
-
+.quote-container {
+  font-family: 'Cinzel', serif;
+}
 </style>
